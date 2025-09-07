@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class valid_sudoku_solution {
+public class ValidSudokuSolution {
     public boolean isValidSudoku(char[][] board) {
 
         int SIZE = 9;

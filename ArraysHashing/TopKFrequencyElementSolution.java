@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class top_k_frequency_element_solution {
+public class TopKFrequencyElementSolution {
     // min-heap sort
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> frequent = new HashMap<>();
@@ -61,7 +61,7 @@ public class top_k_frequency_element_solution {
     }
 
     public static void main(String[] args) {
-        top_k_frequency_element_solution sol = new top_k_frequency_element_solution();
+        TopKFrequencyElementSolution sol = new TopKFrequencyElementSolution();
         int[] testArray = { 1, 2, 2, 3, 3, 3 };
 
         System.out.println(sol.topKFrequentBucketSort(testArray, 2));

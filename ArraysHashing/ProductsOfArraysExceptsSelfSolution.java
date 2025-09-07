@@ -1,4 +1,4 @@
-public class products_of_arrays_excepts_self_solution {
+public class ProductsOfArraysExceptsSelfSolution {
     public int[] productExceptSelf(int[] nums) {
         int[] prefix = new int[nums.length];
         int[] suffix = new int[nums.length];

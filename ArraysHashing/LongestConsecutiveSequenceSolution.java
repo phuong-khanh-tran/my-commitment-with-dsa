@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class longest_consecutive_sequence_solution {
+public class LongestConsecutiveSequenceSolution {
     public int longestConsecutive(int[] nums) {
         Set<Integer> uniques = new HashSet<>();
 

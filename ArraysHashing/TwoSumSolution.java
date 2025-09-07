@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class two_sum_solution {
+public class TwoSumSolution {
     public int[] two_sum(int[] nums, int target) {
         Map<Integer, Integer> numMap = new HashMap<>();
 
@@ -18,7 +18,7 @@ public class two_sum_solution {
     }
 
     public static void main(String[] arg) {
-        two_sum_solution sol = new two_sum_solution();
+        TwoSumSolution sol = new TwoSumSolution();
         int[] nums = { 2, 7, 11, 15 };
         int target = 9;
         int[] res = sol.two_sum(nums, target);

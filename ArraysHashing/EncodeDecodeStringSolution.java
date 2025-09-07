@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class encode_decode_string_solution {
+public class EncodeDecodeStringSolution {
 
     public String encode(List<String> strs) {
         if (strs.size() == 0) {

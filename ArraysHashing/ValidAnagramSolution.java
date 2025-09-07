@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class valid_anagram_solution {
+public class ValidAnagramSolution {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -24,7 +24,7 @@ public class valid_anagram_solution {
     }
 
     public static void main(String[] args) {
-        valid_anagram_solution sol = new valid_anagram_solution();
+        ValidAnagramSolution sol = new ValidAnagramSolution();
         String s = "abrr";
         String t = "rrab";
 
