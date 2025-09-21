@@ -1,20 +1,13 @@
+package LinkedList.SinglyLinkedList;
+
 import java.util.NoSuchElementException;
-
-class Node {
-    int value;
-    Node next;
-
-    Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}
+import LinkedList.Node.Node;
 
 public class SinglyLinkedList {
-    Node head;
-    Node tail;
+    public Node head;
+    public Node tail;
 
-    void insertFirst(int val) {
+    public void insertFirst(int val) {
         Node newNode = new Node(val);
         newNode.next = head;
         head = newNode;
@@ -54,7 +47,7 @@ public class SinglyLinkedList {
         }
     }
 
-    void insertLast(int val) {
+    public void insertLast(int val) {
         Node newNode = new Node(val);
 
         if (head == null) {
@@ -124,6 +117,15 @@ public class SinglyLinkedList {
 
         current.next = null;
         tail = current;
+    }
+
+    public void printList(Node rotatedHead) {
+        Node current = rotatedHead;
+        while (current != null) {
+            System.out.println(current.value + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
     }
 
 }
