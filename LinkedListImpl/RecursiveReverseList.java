@@ -1,7 +1,6 @@
 package LinkedListImpl;
 
 import LinkedList.Node.Node;
-import LinkedList.SinglyLinkedList.SinglyLinkedList;
 
 public class RecursiveReverseList {
     public Node reverse(Node head) {
