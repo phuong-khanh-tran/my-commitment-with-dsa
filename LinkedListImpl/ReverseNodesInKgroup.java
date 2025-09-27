@@ -1,5 +1,15 @@
 package LinkedListImpl;
 
+class Node {
+    int value;
+    Node next;
+
+    Node(int value, Node next) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
 public class ReverseNodesInKgroup {
     public Node reverse(Node head, int k) {
         Node dummy = new Node(0, head);

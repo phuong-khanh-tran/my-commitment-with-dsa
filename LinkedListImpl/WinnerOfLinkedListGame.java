@@ -1,5 +1,7 @@
 package LinkedListImpl;
 
+import LinkedList.Node.Node;
+
 public class WinnerOfLinkedListGame {
     public String gameResult(Node head) {
         if (head == null) {
