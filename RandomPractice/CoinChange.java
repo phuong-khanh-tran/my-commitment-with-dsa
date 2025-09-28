@@ -30,4 +30,11 @@ public class CoinChange {
         memo[amount] = leastCoins;
         return leastCoins;
     }
+
+    public static void main(String[] args) {
+        CoinChange sol = new CoinChange();
+        int[] coins = new int[] { 2 };
+        int res = sol.coinChange(coins, 3);
+        System.out.println((res));
+    }
 }
