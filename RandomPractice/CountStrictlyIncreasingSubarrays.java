@@ -2,19 +2,19 @@ package RandomPractice;
 
 public class CountStrictlyIncreasingSubarrays {
     public int countSub(int[] nums) {
-        int prev = Integer.MAX_VALUE;
-        int total = 0;
-        int streak = 0;
+        if (nums.length == 0)
+            return 0;
 
-        for (int num : nums) {
-            if (num > prev) {
-                streak += 1;
+        int streak = 1;
+        int total = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                streak++;
             } else {
                 streak = 1;
             }
             total += streak;
-            prev = num;
-
         }
         return total;
     }

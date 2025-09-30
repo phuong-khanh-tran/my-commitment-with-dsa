@@ -9,55 +9,51 @@ public class OffsetArrays {
     private static Map<String, Map<Integer, Integer>> arrays = new HashMap<>();
 
     private static int evaluate(String expr) {
-        // Base
         expr = expr.trim();
         if (!expr.contains("[")) {
             return Integer.parseInt(expr);
         }
 
-        String name = expr.substring(0, expr.indexOf("["));
-        int open = expr.indexOf("[") + 1;
-        int close = expr.lastIndexOf(']');
-        String child = expr.substring(open, close);
+        int open = expr.indexOf("[");
+        int close = expr.lastIndexOf("]");
+        String name = expr.substring(0, open);
+        String child = expr.substring(open + 1, close);
+        int idx = evaluate(child);
 
-        int index = evaluate(child);
-
-        return arrays.get(name).get(index);
+        return arrays.get(name).get(idx);
     }
 
     private static void run() {
         Scanner in = new Scanner(System.in);
         int n = Integer.parseInt(in.nextLine());
-
         for (int i = 0; i < n; i++) {
             String line = in.nextLine();
+            String[] halves = line.split("=");
+            String left = halves[0].trim();
+            String right = halves[1].trim();
+            String[] values = right.split("\\.\\.");
 
-            String[] parts = line.split("=");
-            String left = parts[0].trim();
-            String right = parts[1].trim();
+            int open = left.indexOf("[");
+            int close = left.indexOf("]");
 
-            String arrName = left.substring(0, left.indexOf('['));
-            String inside = left.substring(left.indexOf('[') + 1, left.indexOf(']'));
-            String[] range = inside.split("\\.\\.");
-            int first = Integer.parseInt(range[0]);
+            String name = left.substring(0, open);
+            String[] range = left.substring(open + 1, close).split("\\.\\.");
+            int start = Integer.parseInt(range[0]);
+            int end = Integer.parseInt(range[1]);
 
-            String[] values = right.split(" ");
-
-            // Build a map
-            Map<Integer, Integer> indexes = new HashMap<>();
-            for (int j = 0; j < values.length; j++) {
-                indexes.put(first + j, Integer.parseInt(values[j]));
+            Map<Integer, Integer> valMap = new HashMap<>();
+            for (int j = 0; j <= end; j++) {
+                valMap.put(start + j, Integer.parseInt(values[j]));
             }
 
-            arrays.put(arrName, indexes);
+            arrays.put(name, valMap);
         }
 
-        // Recursion
+        // Query
         String query = in.nextLine().trim();
-
         int res = evaluate(query);
-        System.out.println(res);
 
+        System.out.println(res);
         in.close();
     }
 
