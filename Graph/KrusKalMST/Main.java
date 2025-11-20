@@ -70,10 +70,9 @@ public class Main {
                 }
             }
 
-            // union if no cycle
             int ru = findParent(u);
             int rv = findParent(v);
-
+            // union if no cycle
             if (ru != rv) {
                 res[0][i] = u;
                 res[1][i] = v;
